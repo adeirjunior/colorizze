@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorizze</title>
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/social/colorizzeIcon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+<body id="back">
     <main>
         <div id="card">
             <header></header>
+            <h1 id="logo">
+                <span layers="10" depth=".5em" z-data>c</span><span layers="10" depth=".5em" z-data>o</span><span layers="10" depth=".5em" z-data>l</span><span layers="10" depth=".5em" z-data>o</span><span layers="10" depth=".5em" z-data>r</span><span layers="10" depth=".5em" z-data>i</span><span layers="10" depth=".5em" z-data>z</span><span layers="10" depth=".5em" z-data>z</span><span layers="10" depth=".5em" z-data>e</span>
+            </h1>
             <div id="colorW">
                 <table>
                     <tr>
@@ -19,16 +24,14 @@
                     </tr>
                     <tr>
                         <th id="H">Hex:</th>
-                        <td>#C6F4F4</td>
+                        <td></td>
                     </tr>
                 </table>
-                <form action="">
-                    <input type="text"
-                            name="searchBar"
-                            placeholder="Color name here"
-                            id="colorF"/>
-                    <button type="submit">Set Color</button>
-                </form>
+                <input type="text"
+                        name="searchBar"
+                        placeholder="Color name here"
+                        id="colorF"/>
+                <button id="colorBtn" type="submit"><span>Set Color</span></button>
             </div>
         </div>
     </main>
@@ -39,5 +42,7 @@
             </svg>
         </a>
     </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/ztext.min.js"></script>
 </body>
 </html>
