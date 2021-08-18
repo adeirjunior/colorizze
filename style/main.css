@@ -7,4 +7,24 @@ body {
   margin: 0;
   background-color: #C6F4F4;
 }
+
+body div#card {
+  background-color: white;
+  width: 100%;
+  height: to 100%;
+}
+
+body footer {
+  background-color: #393E41;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+body footer #gitHub {
+  fill: white;
+  margin: .5em;
+}
 /*# sourceMappingURL=main.css.map */
