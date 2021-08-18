@@ -1,7 +1,14 @@
 $(document).ready(() =>{
+    //for randomized logo colors
+    let colorsL = ['tomato', 'deeppink', 'skyblue', 'dodgerblue', 'violet', 'darkslateblue', 'green', 'crimson']
+    
+    function getRandomColor() {
+    return colorsL[Math.floor(Math.random() * colorsL.length)];
+    }
+    
     const card = $('#card');
     const cardWidth = $(card).width()
-    const bodyColor = document.getElementById('back').style.backgroundColor
+    const bodyColor = document.getElementById('back')
 
     $(card).css({height: cardWidth+'px'})
 
@@ -18,6 +25,12 @@ $(document).ready(() =>{
             "id": "colorsS",
             html: colors.join( "" )
           }).appendTo( "#colorW" );
+          let hex = $("#colorsS").children().attr("id")
+          
+          console.log(hex)
+          $("#colorsS li").click( async () =>{
+            bodyColor.css("background-color:" + hex)
+          })
         
         
 
@@ -35,8 +48,8 @@ $(document).ready(() =>{
         });
     })
     
-    
-    
+   
+    //resize height
     window.addEventListener('resize', function(){
         const card = $('#card');
         const cardWidth = $(card).width()
