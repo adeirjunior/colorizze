@@ -23,6 +23,7 @@ html, body{
 body{
     margin: 0;
     background-color: color(primary);
+    transition: all .5s;
 
     .z-text {
         transform: rotateX(-15deg);
@@ -36,7 +37,7 @@ body{
         background-color: white;
         width: $widthCard;
         position: absolute;
-        top: 50%;
+        top: 46.5%;
         transform: translateY(-50%);
         box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .2);
         animation-name: fadeIn;

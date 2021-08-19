@@ -1,6 +1,5 @@
 $(document).ready(() =>{
-    
-
+   
     //for randomized logo colors
     let colorsL = ['tomato', 'deeppink', 'skyblue', 'dodgerblue', 'violet', 'darkslateblue', 'green', 'crimson']
     
@@ -29,20 +28,26 @@ $(document).ready(() =>{
             html: colors.join( "" )
           }).appendTo( "#colorW" );
           let hex = $("#colorsS li").attr("id")
-          
+          var colorInput = $('#colorsS li').text();
+
+
           console.log(hex)
           $("#colorsS").children().click(() =>{
                 $("#H td").empty();
                 $("#H td").append(hex);
-          })
+                document.getElementById("back").style.backgroundColor = hex;
+                $("#colorF").val($("#colorsS").val() + "");
+                $("#colorF").val($("#colorsS").val() + colorInput);   
+
+            })
 
           searchBar.addEventListener('keyup', (e) =>{
             console.log(e.target.value);
-            $("#colorsS").empty()
-            colors.push("<li id='" + key +"'>" + val + "</li>");
-              
-           
-        });
+            
+          });
+          
+
+
         const slider = document.querySelector('#colorsS');
     let isDown = false;
     let startX;
@@ -81,6 +86,6 @@ $(document).ready(() =>{
     },true);
 
     })
-    
+
     
    
