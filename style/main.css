@@ -10,6 +10,19 @@ body {
   background-color: #C6F4F4;
 }
 
+body .z-text {
+  -webkit-transform: rotateX(-15deg);
+          transform: rotateX(-15deg);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body textarea:focus, body input:focus {
+  outline: none;
+}
+
 body div#card {
   text-align: center;
   background-color: white;
@@ -69,6 +82,14 @@ body div#card #colorF {
   border-radius: 1.2em;
 }
 
+body div#card #colorsS.active {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 body div#card #colorsS {
   text-decoration: none;
   list-style: none;
@@ -84,6 +105,10 @@ body div#card #colorsS {
           user-select: none;
   position: relative;
   cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 body div#card #colorsS li {

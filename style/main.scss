@@ -24,6 +24,13 @@ body{
     margin: 0;
     background-color: color(primary);
 
+    .z-text {
+        transform: rotateX(-15deg);
+        transition: transform 1s;
+    }
+    textarea:focus, input:focus{
+        outline: none;
+    }
     div#card{
         text-align: center;
         background-color: white;
@@ -68,6 +75,12 @@ body{
                 border: .1em solid color(black);
                 border-radius: $radius;
             }
+              #colorsS.active {
+                background: rgba(255,255,255,0.3);
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+                transform: scale(1);
+              }
             #colorsS{
                 text-decoration: none;
                 list-style: none;
@@ -80,9 +93,11 @@ body{
                 user-select: none;
                 position: relative;
                 cursor: pointer;
+                transition: all 0.2s;
+                transform: scale(0.98);
 
                 li{
-                    display: inline-block;
+                    display: inline-block;     
                 }
                 li:not(:last-child){
                     margin-right: 1em;

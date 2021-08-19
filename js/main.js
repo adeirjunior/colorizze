@@ -1,4 +1,6 @@
 $(document).ready(() =>{
+    
+
     //for randomized logo colors
     let colorsL = ['tomato', 'deeppink', 'skyblue', 'dodgerblue', 'violet', 'darkslateblue', 'green', 'crimson']
     
@@ -6,9 +8,10 @@ $(document).ready(() =>{
     return colorsL[Math.floor(Math.random() * colorsL.length)];
     }
     
+    $(".z-layer").css("color",getRandomColor)
+    
     const card = $('#card');
-    const cardWidth = $(card).width()
-    const bodyColor = document.getElementById('back')
+    const cardWidth = $(card).width();
 
     $(card).css({height: cardWidth+'px'})
 
@@ -25,27 +28,48 @@ $(document).ready(() =>{
             "id": "colorsS",
             html: colors.join( "" )
           }).appendTo( "#colorW" );
-          let hex = $("#colorsS").children().attr("id")
+          let hex = $("#colorsS li").attr("id")
           
           console.log(hex)
-          $("#colorsS li").click( async () =>{
-            bodyColor.css("background-color:" + hex)
+          $("#colorsS").children().click(() =>{
+                $("#H td").empty();
+                $("#H td").append(hex);
           })
-        
-        
 
           searchBar.addEventListener('keyup', (e) =>{
             console.log(e.target.value);
-
             $("#colorsS").empty()
-            function filterColors(e) {
-                return colors.filter(function(el) {
-                    return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-                })
-              } 
+            colors.push("<li id='" + key +"'>" + val + "</li>");
               
            
         });
+        const slider = document.querySelector('#colorsS');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+    });
     })
     
    
