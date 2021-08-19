@@ -32,12 +32,12 @@ $(document).ready(() =>{
 
 
           console.log(hex)
-          $("#colorsS").children().click(() =>{
+          $("#colorsS").click(() =>{
                 $("#H td").empty();
                 $("#H td").append(hex);
                 document.getElementById("back").style.backgroundColor = hex;
-                $("#colorF").val($("#colorsS").val() + "");
-                $("#colorF").val($("#colorsS").val() + colorInput);   
+                $("#colorF").val($("#colorsS li").val() + "");
+                $("#colorF").val($("#colorsS li").val() + colorInput);   
 
             })
 
@@ -73,7 +73,6 @@ $(document).ready(() =>{
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 1.5; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
-    console.log(walk);
     });
     })
     

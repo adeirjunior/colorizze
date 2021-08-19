@@ -10,6 +10,7 @@ body {
   background-color: #C6F4F4;
   -webkit-transition: all .5s;
   transition: all .5s;
+  position: relative;
 }
 
 body .z-text {
@@ -30,15 +31,24 @@ body div#card {
   background-color: white;
   width: 100%;
   position: absolute;
-  top: 46.5%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 44.7%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
+  display: block;
+}
+
+@media only screen and (min-width: 350px) {
+  body div#card {
+    width: 350px;
+    margin: 0 auto;
+  }
 }
 
 @-webkit-keyframes fadeIn {
@@ -64,6 +74,7 @@ body div#card #logo {
   font-family: 'Nunito', sans-serif;
   margin: 0.31em;
   font-size: 2.25rem;
+  cursor: default;
 }
 
 body div#card table {
@@ -71,6 +82,13 @@ body div#card table {
   margin: 0.31em 0;
   font-size: .63rem;
   font-family: 'NTR', sans-serif;
+  cursor: default;
+}
+
+body div#card table tr td:hover {
+  background-color: whitesmoke;
+  border-radius: .3em;
+  cursor: pointer;
 }
 
 body div#card #colorF {
@@ -111,6 +129,7 @@ body div#card #colorsS {
   transition: all 0.2s;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
+  padding: 0;
 }
 
 body div#card #colorsS li {
@@ -131,6 +150,8 @@ body div#card #colorBtn {
   background-color: #D33F49;
   cursor: pointer;
   margin: 0.31em 0;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
 }
 
 body div#card #colorBtn span {
