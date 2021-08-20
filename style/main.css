@@ -37,6 +37,7 @@ body #tooSmall {
   position: absolute;
   top: 44.7%;
   left: 50%;
+  color: rgba(0, 0, 0, 0.4);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-transform: uppercase;
@@ -93,6 +94,27 @@ body div#card {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  body div#card {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body div#card {
+    -webkit-transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  body div#card {
+    -webkit-transform: translate(-50%, -50%) scale(2.5);
+            transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -129,6 +151,7 @@ body div#card table {
   display: inline-block;
   margin: 0.31em 0;
   font-size: .63rem;
+  color: #393E41;
   font-family: 'NTR', sans-serif;
   cursor: default;
 }
@@ -163,7 +186,6 @@ body div#card #colorF {
 }
 
 body div#card #colorsS.active {
-  background: rgba(255, 255, 255, 0.3);
   cursor: grabbing;
   cursor: -webkit-grabbing;
   -webkit-transform: scale(1);
@@ -190,11 +212,19 @@ body div#card #colorsS {
           transform: scale(0.98);
   padding: 0;
   margin: 1em 1.5em;
+  color: #393E41;
 }
 
 body div#card #colorsS li {
   display: inline-block;
   cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+body div#card #colorsS li:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 body div#card #colorsS li:not(:last-child) {
@@ -244,5 +274,28 @@ body footer {
 body footer #gitHub {
   fill: white;
   margin: .5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  body footer #gitHub {
+    width: 40px;
+    height: auto;
+    margin: .7em;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  body footer #gitHub {
+    width: 50px;
+    height: auto;
+    margin: .9em;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  body footer #gitHub {
+    width: 70px;
+    height: auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */
