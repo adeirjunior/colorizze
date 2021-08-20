@@ -1,2 +1,2 @@
-# colorizzer
- A simple background color changer
+# colorizze
+ A simple color searcher
