@@ -27,17 +27,25 @@ $(document).ready(() =>{
             "id": "colorsS",
             html: colors.join( "" )
           }).appendTo( "#colorW" );
-          let hex = $("#colorsS li").attr("id")
-          var colorInput = $('#colorsS li').text();
-
-
-          console.log(hex)
-          $("#colorsS").click(() =>{
+          
+          let colorsS = $("#colorsS")
+          
+          $(colorsS).click((evt) =>{
+                let listItem = null;
+                let hex = null;
+                if (evt.target == colorsS) {
+                  return;
+                } else if (!(evt.target instanceof HTMLLIElement)) {
+                  return;
+                } else{
+                  listItem = evt.target;
+                  hex= listItem.id;
+                }
                 $("#H td").empty();
-                $("#H td").append(hex);
+                $("#H td").append(listItem.id);
                 document.getElementById("back").style.backgroundColor = hex;
-                $("#colorF").val($("#colorsS li").val() + "");
-                $("#colorF").val($("#colorsS li").val() + colorInput);   
+                $(searchBar).val("");
+                $(searchBar).val(listItem.textContent);   
 
             })
 
@@ -48,7 +56,7 @@ $(document).ready(() =>{
           
 
 
-        const slider = document.querySelector('#colorsS');
+        const slider = document.querySelector("#colorsS");
     let isDown = false;
     let startX;
     let scrollLeft;

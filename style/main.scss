@@ -10,6 +10,14 @@ $colors: (
 @function color($colorName){
     @return map-get($colors,$colorName)
 };
+@mixin tooSmall{
+        @media only screen and (max-width:270px){
+            @content;
+        }
+        @media only screen and (max-height:355px){
+            @content;
+        }
+}
 @mixin desktop {
     
     @media only screen and (min-width:350px)  {
@@ -37,6 +45,28 @@ body{
     textarea:focus, input:focus{
         outline: none;
     }
+    #tooSmall{
+
+        display: none;
+        width: 150px;
+        padding: $marginBtn 0;
+        text-align: center;
+        background-color: white;
+        font-family: 'NTR', sans-serif;
+        border-radius: 1em;
+        position: absolute;
+        top: 44.7%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: default;
+        z-index: -1;
+
+        @include tooSmall(){
+            display: block;
+        }
+    }
     div#card{
         text-align: center;
         background-color: white;
@@ -49,10 +79,12 @@ body{
         animation-name: fadeIn;
         animation-duration: 3s;
         display: block;
-
+        @include tooSmall(){
+            display: none;
+            
+        }
         @include desktop(){
             width: 350px;
-            margin: 0 auto;
         }
 
         @keyframes fadeIn {
@@ -63,13 +95,15 @@ body{
                 opacity: 1;
             }
         }
-
         #logo{
             text-transform: uppercase;
             font-family: 'Nunito', sans-serif;
             margin: $marginTB;
             font-size: 2.25rem;
             cursor: default;
+            @include desktop(){
+                margin-bottom: 1em;
+            }
         }
         table{
             display: inline-block;
@@ -77,6 +111,9 @@ body{
             font-size: .63rem;
             font-family: 'NTR', sans-serif;
             cursor: default;
+            @include desktop(){
+                margin-bottom: 1em;
+            }
 
             tr td:hover{
                 background-color: rgb(245, 245, 245);
@@ -95,6 +132,9 @@ body{
                 font-family: 'NTR', sans-serif;
                 border: .1em solid color(black);
                 border-radius: $radius;
+                @include desktop(){
+                    margin-bottom: 1em;
+                }
             }
               #colorsS.active {
                 background: rgba(255,255,255,0.3);
@@ -113,13 +153,14 @@ body{
                 will-change: transform;
                 user-select: none;
                 position: relative;
-                cursor: pointer;
                 transition: all 0.2s;
                 transform: scale(0.98);
                 padding: 0;
+                margin: 1em 1.5em;
 
                 li{
-                    display: inline-block;     
+                    display: inline-block;   
+                    cursor: pointer;  
                 }
                 li:not(:last-child){
                     margin-right: 1em;
@@ -135,6 +176,9 @@ body{
                 cursor: pointer;
                 margin: $marginTB 0;
                 transition: background-color .2s;
+                @include desktop(){
+                    margin-bottom: 1em;
+                }
                 
                 span{
                     color: white;

@@ -26,6 +26,37 @@ body textarea:focus, body input:focus {
   outline: none;
 }
 
+body #tooSmall {
+  display: none;
+  width: 150px;
+  padding: 0.63em 0;
+  text-align: center;
+  background-color: white;
+  font-family: 'NTR', sans-serif;
+  border-radius: 1em;
+  position: absolute;
+  top: 44.7%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: default;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 270px) {
+  body #tooSmall {
+    display: block;
+  }
+}
+
+@media only screen and (max-height: 355px) {
+  body #tooSmall {
+    display: block;
+  }
+}
+
 body div#card {
   text-align: center;
   background-color: white;
@@ -44,10 +75,21 @@ body div#card {
   display: block;
 }
 
+@media only screen and (max-width: 270px) {
+  body div#card {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 355px) {
+  body div#card {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 350px) {
   body div#card {
     width: 350px;
-    margin: 0 auto;
   }
 }
 
@@ -77,12 +119,24 @@ body div#card #logo {
   cursor: default;
 }
 
+@media only screen and (min-width: 350px) {
+  body div#card #logo {
+    margin-bottom: 1em;
+  }
+}
+
 body div#card table {
   display: inline-block;
   margin: 0.31em 0;
   font-size: .63rem;
   font-family: 'NTR', sans-serif;
   cursor: default;
+}
+
+@media only screen and (min-width: 350px) {
+  body div#card table {
+    margin-bottom: 1em;
+  }
 }
 
 body div#card table tr td:hover {
@@ -100,6 +154,12 @@ body div#card #colorF {
   font-family: 'NTR', sans-serif;
   border: 0.1em solid #393E41;
   border-radius: 1.2em;
+}
+
+@media only screen and (min-width: 350px) {
+  body div#card #colorF {
+    margin-bottom: 1em;
+  }
 }
 
 body div#card #colorsS.active {
@@ -124,16 +184,17 @@ body div#card #colorsS {
       -ms-user-select: none;
           user-select: none;
   position: relative;
-  cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
   padding: 0;
+  margin: 1em 1.5em;
 }
 
 body div#card #colorsS li {
   display: inline-block;
+  cursor: pointer;
 }
 
 body div#card #colorsS li:not(:last-child) {
@@ -152,6 +213,12 @@ body div#card #colorBtn {
   margin: 0.31em 0;
   -webkit-transition: background-color .2s;
   transition: background-color .2s;
+}
+
+@media only screen and (min-width: 350px) {
+  body div#card #colorBtn {
+    margin-bottom: 1em;
+  }
 }
 
 body div#card #colorBtn span {
