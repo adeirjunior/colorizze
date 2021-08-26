@@ -6,17 +6,10 @@ $colors: (
     buttonLight: lighten(#D33F49, 5%),
     black: #393E41,
 );
-$fonts: (
-    nunito:'Nunito', sans-serif,
-    ntr: 'NTR', sans-serif,
-);
 
 @function color($colorName){
     @return map-get($colors,$colorName)
 };
-@function fonts($fontName){
-    @return map-get($fonts, $fontName)
-}
 @mixin tooSmall{
         @media only screen and (max-width:270px){
             @content;
@@ -74,7 +67,7 @@ body{
         padding: $marginBtn 0;
         text-align: center;
         background-color: white;
-        font-family: fonts(ntr);
+        font-family: 'NTR', sans-serif;
         border-radius: 1em;
         position: absolute;
         top: 44.7%;
@@ -90,6 +83,37 @@ body{
             display: block;
         }
     }
+    #copy{
+        background-color: color(black);
+        position: fixed;
+        top: 85%;
+        left: 50%;
+        font-size: 1rem;
+        margin: 0 auto;
+        transform: translateX(-50%);
+        padding: .4em 1em;
+        color: white;
+        border-radius: .9em;
+        font-family: 'NTR', sans-serif;
+        cursor: default;
+        animation-name: slideUp;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes slideUp {
+        0%{
+            top: 100%;
+        }
+        50%{
+            top: 85%;
+            opacity: 1;
+        }
+        100%{
+            top: 85%;
+            opacity: 0;
+        }
+        
+    }
     div#card{
         text-align: center;
         background-color: white;
@@ -100,13 +124,14 @@ body{
         transform: translate(-50%,-50%);
         box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .2);
         animation-name: fadeIn;
-        animation-duration: .25s;
+        animation-duration: 3s;
         display: block;
         @include tooSmall(){
             display: none;
         }
         @include tablet(){
             width: 350px;
+            border-radius: 1em;
         }
         @include desktop(){
             transform: translate(-50%,-50%) scale(1.5);
@@ -127,7 +152,7 @@ body{
         }
         #logo{
             text-transform: uppercase;
-            font-family: fonts(nunito);
+            font-family: 'Nunito', sans-serif;
             margin: $marginTB;
             font-size: 2.25rem;
             cursor: default;
@@ -140,10 +165,13 @@ body{
             margin: $marginTB 0;
             font-size: .63rem;
             color: color(black);
-            font-family: fonts(ntr);
+            font-family: 'NTR', sans-serif;
             cursor: default;
             @include tablet(){
                 margin-bottom: 1em;
+            }
+            tr td{
+                padding: 0 .5em;
             }
 
             tr td:hover{
@@ -160,7 +188,7 @@ body{
                 margin: $marginTB 20%;
                 font-size: .88rem;
                 text-align: center;
-                font-family: fonts(ntr);
+                font-family: 'NTR', sans-serif;
                 border: .1em solid color(black);
                 border-radius: $radius;
                 @include tablet(){
@@ -179,7 +207,7 @@ body{
                 overflow-y: hidden;
                 overflow-x: scroll;
                 white-space: nowrap;
-                font-family: fonts(ntr);
+                font-family: 'NTR', sans-serif;
                 will-change: transform;
                 user-select: none;
                 position: relative;

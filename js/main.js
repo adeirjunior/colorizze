@@ -39,7 +39,7 @@ $(document).ready(() =>{
                   return;
                 } else{
                   listItem = evt.target;
-                  hex= listItem.id;
+                  hex = listItem.id;
                 }
                 $("#H td").empty();
                 $("#H td").append(listItem.id);
@@ -92,7 +92,26 @@ $(document).ready(() =>{
         $(card).css({height: cardWidth+'px'})
     },true);
 
+    
+    let hex = $("#H td");
+
+    $(hex).click((e)=>{
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(e).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+
+      $("main").append("<div id='copy'>Copied!</div>")
+      setTimeout(()=>{
+        $("#copy").fadeOut(1000);
+        setTimeout(()=>{
+          $("#copy").remove();
+        },1300);
+      },300);
     })
+    
+  })
 
     
    

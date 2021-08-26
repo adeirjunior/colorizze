@@ -58,6 +58,56 @@ body #tooSmall {
   }
 }
 
+body #copy {
+  background-color: #393E41;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  font-size: 1rem;
+  margin: 0 auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: .4em 1em;
+  color: white;
+  border-radius: .9em;
+  font-family: 'NTR', sans-serif;
+  cursor: default;
+  -webkit-animation-name: slideUp;
+          animation-name: slideUp;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+  100% {
+    top: 85%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: 85%;
+    opacity: 1;
+  }
+  100% {
+    top: 85%;
+    opacity: 0;
+  }
+}
+
 body div#card {
   text-align: center;
   background-color: white;
@@ -91,6 +141,7 @@ body div#card {
 @media only screen and (min-width: 350px) {
   body div#card {
     width: 350px;
+    border-radius: 1em;
   }
 }
 
@@ -160,6 +211,10 @@ body div#card table {
   body div#card table {
     margin-bottom: 1em;
   }
+}
+
+body div#card table tr td {
+  padding: 0 .5em;
 }
 
 body div#card table tr td:hover {
