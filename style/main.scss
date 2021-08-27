@@ -5,6 +5,7 @@ $colors: (
     button: #D33F49,
     buttonLight: lighten(#D33F49, 5%),
     black: #393E41,
+    blackLight: lighten(#393E41,40%),
 );
 
 @function color($colorName){
@@ -189,7 +190,7 @@ body{
                 font-size: .88rem;
                 text-align: center;
                 font-family: 'NTR', sans-serif;
-                border: .1em solid color(black);
+                border: .1em solid color(blackLight);
                 border-radius: $radius;
                 @include tablet(){
                     margin-bottom: 1em;
@@ -223,10 +224,17 @@ body{
                     transition: all .2s;
                 }
                 li:hover{
-                    transform: scale(1.03);
+                    color: color(blackLight);
                 }
                 li:not(:last-child){
                     margin-right: 1em;
+                }
+                span.colCircle{
+                    width: 1em;
+                    height: 1em;
+                    display: inline-flex;
+                    border-radius: 50%;
+                    margin-left: .5em;
                 }
             }
             #colorsS::-webkit-scrollbar{

@@ -20,7 +20,7 @@ $(document).ready(() =>{
         $.getJSON("/js/colors.json", (data) =>{
         let colors = [];
         $.each(data, (key, val) =>{
-            colors.push("<li id='" + key +"'>" + val + "</li>");
+            colors.push("<li id='" + key +"'>" + val + '<span class="' + "colCircle" +'" id="' + val + '" style="'+ "background-color:" + key + '"></span>' + "</li>");
             
         });
         $( "<ul/>", {
@@ -51,7 +51,7 @@ $(document).ready(() =>{
 
           searchBar.addEventListener('keyup', (e) =>{
             console.log(e.target.value);
-            
+            let val = e.target.value.toLowerCase().trim();
           });
           
 
@@ -95,10 +95,10 @@ $(document).ready(() =>{
     
     let hex = $("#H td");
 
-    $(hex).click((e)=>{
-      var $temp = $("<input>");
-      $("body").append($temp);
-      $temp.val($(e).text()).select();
+    $(hex).click(()=>{
+      let text = $(hex).html();
+
+      var $temp = $("<input>").val(text).appendTo('body').select();
       document.execCommand("copy");
       $temp.remove();
 

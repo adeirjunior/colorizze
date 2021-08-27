@@ -230,7 +230,7 @@ body div#card #colorF {
   font-size: .88rem;
   text-align: center;
   font-family: 'NTR', sans-serif;
-  border: 0.1em solid #393E41;
+  border: 0.1em solid #9da5a9;
   border-radius: 1.2em;
 }
 
@@ -278,12 +278,21 @@ body div#card #colorsS li {
 }
 
 body div#card #colorsS li:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  color: #9da5a9;
 }
 
 body div#card #colorsS li:not(:last-child) {
   margin-right: 1em;
+}
+
+body div#card #colorsS span.colCircle {
+  width: 1em;
+  height: 1em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 50%;
+  margin-left: .5em;
 }
 
 body div#card #colorsS::-webkit-scrollbar {
