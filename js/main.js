@@ -49,9 +49,12 @@ $(document).ready(() =>{
 
             })
 
-          searchBar.addEventListener('keyup', (e) =>{
+          $(searchBar).on('keyup', (e) =>{
             console.log(e.target.value);
-            let val = e.target.value.toLowerCase().trim();
+            let val = e.target.value.toLowerCase();
+            $("#colorsS li").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(val) > -1)
+            });
           });
           
 
