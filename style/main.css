@@ -74,8 +74,8 @@ body #copy {
   cursor: default;
   -webkit-animation-name: slideUp;
           animation-name: slideUp;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
